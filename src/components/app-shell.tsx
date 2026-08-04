@@ -104,13 +104,13 @@ export function AppShell({ children }: AppShellProps) {
             <button
               type="button"
               className="flex h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl lg:border bg-white px-3 text-sm font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:bg-muted hover:shadow active:scale-95 md:px-4"
-              aria-label="Search with image"
-              title="Search with image"
+              aria-label="Search by image"
+              title="Search by image"
             >
               <Camera className="size-5 shrink-0" />
 
               <span className="hidden whitespace-nowrap md:inline">
-                Search with image
+                Search by image
               </span>
             </button>
 
