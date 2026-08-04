@@ -25,8 +25,27 @@ type AppShellProps = {
   children: React.ReactNode;
 };
 
+type Language = "en" | "zh-cn";
+
+const languageMeta: Record<
+  Language,
+  { label: string; flagSrc: string; alt: string }
+> = {
+  en: {
+    label: "EN",
+    flagSrc: "/images/flags/uk.svg",
+    alt: "English",
+  },
+  "zh-cn": {
+    label: "中文",
+    flagSrc: "/images/flags/cn.svg",
+    alt: "Chinese",
+  },
+};
+
 export function AppShell({ children }: AppShellProps) {
   const [showUtilityBar, setShowUtilityBar] = useState(true);
+  const [language, setLanguage] = useState<Language>("en");
 
   useEffect(() => {
     const updateBarVisibility = () => {
@@ -38,6 +57,9 @@ export function AppShell({ children }: AppShellProps) {
 
     return () => window.removeEventListener("scroll", updateBarVisibility);
   }, []);
+
+  const currentLanguage = languageMeta[language];
+  const nextLanguage: Language = language === "en" ? "zh-cn" : "en";
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
@@ -71,7 +93,22 @@ export function AppShell({ children }: AppShellProps) {
                 Contact Us
               </span>
 
-              <span>EN</span>
+              <button
+                type="button"
+                onClick={() => setLanguage(nextLanguage)}
+                className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-border/70 bg-white px-2 py-1 text-xs text-foreground transition-colors hover:bg-muted"
+                aria-label={`Switch language to ${languageMeta[nextLanguage].label}`}
+                title={`Switch language to ${languageMeta[nextLanguage].label}`}
+              >
+                <Image
+                  src={currentLanguage.flagSrc}
+                  alt={currentLanguage.alt}
+                  width={18}
+                  height={12}
+                  className="rounded-xs"
+                />
+                <span>{currentLanguage.label}</span>
+              </button>
 
               <span className="inline-flex items-center gap-1.5">
                 <Smartphone className="size-3.5" />
@@ -103,13 +140,49 @@ export function AppShell({ children }: AppShellProps) {
 
             <button
               type="button"
-              className="flex h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl lg:border bg-white px-3 text-sm font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:bg-muted hover:shadow active:scale-95 md:px-4"
+              className="
+                group relative flex h-11 shrink-0 cursor-pointer
+                items-center justify-center gap-2 overflow-hidden rounded-xl
+                border border-white/20
+                bg-linear-to-br from-[#194891] via-[#245ca8] to-[#3b82d0]
+                px-3 text-sm font-medium text-white
+                shadow-[0_8px_24px_rgba(25,72,145,0.28)]
+                transition-all duration-300
+                hover:-translate-y-0.5
+                hover:shadow-[0_12px_30px_rgba(25,72,145,0.4)]
+                active:translate-y-0 active:scale-[0.97]
+                md:px-4
+            "
               aria-label="Search by image"
               title="Search by image"
             >
-              <Camera className="size-5 shrink-0" />
+              {/* Glass highlight */}
+              <span
+                aria-hidden="true"
+                className="
+                pointer-events-none absolute inset-x-0 top-0 h-1/2
+                bg-linear-to-b from-white/20 to-transparent
+                "
+              />
+              {/* Moving shine */}
+              <span
+                aria-hidden="true"
+                className="
+                pointer-events-none absolute inset-y-0 -left-1/2 w-1/3
+                skew-x-[-20deg] bg-white/20 blur-sm
+                transition-all duration-700
+                group-hover:left-[120%]
+                "
+              />
+              <Camera
+                className="
+                relative z-10 size-5 shrink-0
+                transition-transform duration-300
+                group-hover:scale-110
+                "
+              />
 
-              <span className="hidden whitespace-nowrap md:inline">
+              <span className="relative z-10 hidden whitespace-nowrap md:inline">
                 Search by image
               </span>
             </button>
