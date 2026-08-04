@@ -1,16 +1,15 @@
 import Image from "next/image";
 import { ChevronRight, PackageCheck, ShieldCheck, Truck } from "lucide-react";
-import { HomeMarketplacePanel } from "@/components/home-marketplace-panel";
 
 export function HomeHero() {
   return (
-    <main className="relative overflow-hidden px-4 py-6 sm:px-8 lg:px-0">
+    <main className="relative overflow-hidden px-4 lg:py-6 sm:px-8 lg:px-0">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(105,139,255,0.22),transparent_0%),radial-gradient(circle_at_88%_5%,rgba(120,164,255,0.22),transparent_0%)]" />
 
       <div className="pointer-events-none absolute top-6 right-6 hidden h-56 w-[44%] rounded-full bg-[radial-gradient(circle,rgba(96,133,245,0.28)_1.2px,transparent_1.3px)] bg-size-[8px_8px] opacity-55 lg:block" />
       <div className="pointer-events-none absolute bottom-6 left-6 hidden h-32 w-[44%] rounded-full bg-[radial-gradient(circle,rgba(96,133,245,0.28)_1.2px,transparent_1.3px)] bg-size-[8px_8px] opacity-55 lg:block" />
 
-      <section className="relative mx-auto flex h-[50%] w-full max-w-[95%] flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+      <section className="relative hidden lg:flex mx-auto  h-[50%] w-full max-w-[95%] flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-[60%] max-w-3xl  ">
           <h1 className="text-balance text-4xl leading-tight font-extrabold tracking-tight text-[#194891] sm:text-5xl">
             Easily purchase Chinese products
