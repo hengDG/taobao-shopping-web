@@ -1,6 +1,11 @@
-import { ProductGrid } from "../components/product-grid";
-import { products } from "../data/products";
+import { HomeHero } from "@/components/home-hero";
+import { HomeMarketplacePanel } from "@/components/home-marketplace-panel";
 
 export default function HomePage() {
-  return <ProductGrid products={products} />;
+  return (
+    <>
+      <HomeHero />
+      <HomeMarketplacePanel />
+    </>
+  );
 }
