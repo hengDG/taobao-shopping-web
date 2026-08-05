@@ -45,11 +45,11 @@ export function ProductGrid({ products }: ProductGridProps) {
                 : "bg-white/20 text-white hover:bg-white/30"
             }`}
           >
-            All 
+            All
             {/* ({products.length}) */}
           </button>
 
-          {categoryEntries.map(([category, count]) => {
+          {categoryEntries.map(([category]) => {
             const isActive = activeCategory === category;
 
             return (
@@ -63,7 +63,7 @@ export function ProductGrid({ products }: ProductGridProps) {
                     : "border-white/25 bg-white/12 text-white hover:bg-white/22"
                 }`}
               >
-                {category} 
+                {category}
               </button>
             );
           })}
@@ -71,7 +71,7 @@ export function ProductGrid({ products }: ProductGridProps) {
       </header>
 
       <main className="mx-auto w-full max-w-[98%] px-3 py-6 sm:px-5">
-        <div className="columns-2 gap-3 sm:columns-3 sm:gap-4 lg:columns-5 xl:columns-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(165px,1fr))] gap-3 sm:grid-cols-[repeat(auto-fit,minmax(180px,1fr))] sm:gap-4 lg:grid-cols-6">
           {visibleProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

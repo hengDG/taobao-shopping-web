@@ -4,8 +4,8 @@ import { HomeMarketplacePanel } from "@/components/home-marketplace-panel";
 export default function HomePage() {
   return (
     <>
-      {/* <HomeHero /> */}
-      {/* <HomeMarketplacePanel /> */}
+      <HomeHero />
+      <HomeMarketplacePanel />
     </>
   );
 }

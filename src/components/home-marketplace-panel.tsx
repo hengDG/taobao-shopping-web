@@ -30,7 +30,7 @@ const slides = [
   },
 ];
 
-const hotSell = products.slice(0, 8);
+const hotSell = products;
 
 export function HomeMarketplacePanel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,15 +46,16 @@ export function HomeMarketplacePanel() {
   const activeSlide = slides[activeIndex];
 
   return (
-    <section className="mx-auto grid w-full max-w-[95%] gap-4 pb-6 lg:grid-cols-12">
+    <section className="mx-auto grid w-full max-w-[95%] gap-4 pb-6 lg:grid-cols-12 relative">
+      {" "}
       <article
-        className={`relative min-h-[230px] overflow-hidden rounded-3xl p-4 text-white shadow-[0_14px_28px_rgba(34,74,130,0.2)] sm:min-h-[270px] sm:p-5 lg:col-span-3 lg:min-h-[520px] ${activeSlide.bgClass}`}
+        className={`relative  min-h-[230px] overflow-hidden rounded-3xl p-4 text-white shadow-[0_14px_28px_rgba(34,74,130,0.2)] sm:min-h-[270px] sm:p-5 lg:col-span-2 lg:min-h-[520px] ${activeSlide.bgClass}`}
       >
         <span className="inline-flex rounded-full bg-red-600 px-2 py-1 text-xs font-semibold">
           天猫
         </span>
         <div className="w-[72%] sm:w-[70%] lg:w-[82%]">
-          <h3 className="mt-2 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-5xl">
+          <h3 className="mt-2 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl 2xl:text-5xl">
             {activeSlide.title}
           </h3>
           <p className="mt-1 text-sm text-white/90 sm:text-base lg:text-xl">
@@ -88,8 +89,7 @@ export function HomeMarketplacePanel() {
           ))}
         </div>
       </article>
-
-      <article className="rounded-3xl border border-[#e5ecff] bg-[#f7f9ff] p-4 sm:p-5 lg:col-span-6">
+      <article className="rounded-3xl border border-[#e5ecff] bg-[#f7f9ff] p-4 sm:p-5 lg:col-span-7 2xl:col-span-7">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h3 className="text-lg font-extrabold text-[#263247] sm:text-xl">
             10 billion yuan subsidy · If you buy something expensive, you will
@@ -98,15 +98,17 @@ export function HomeMarketplacePanel() {
             href="/products"
             className="inline-flex w-full items-center justify-center rounded-xl bg-[#194891] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#143a75] sm:w-auto"
           >
-            Show more <span className="lg:hidden block">products</span> 
+            Show more <span className="lg:hidden block">products</span>
           </Link>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {hotSell.map((product) => (
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+          {hotSell.map((product, index) => (
             <div
               key={product.id}
-              className="rounded-2xl border border-[#edf2ff] bg-white p-2.5 shadow-[0_10px_24px_rgba(19,40,96,0.07)] sm:p-3"
+              className={`rounded-2xl border border-[#edf2ff] bg-white p-2.5 shadow-[0_10px_24px_rgba(19,40,96,0.07)] sm:p-3 ${
+                index >= 10 ? "hidden" : index >= 8 ? "hidden 2xl:block" : ""
+              }`}
             >
               {product.imageUrl ? (
                 <Image
@@ -139,8 +141,7 @@ export function HomeMarketplacePanel() {
           ))}
         </div>
       </article>
-
-      <article className="relative w-full overflow-hidden rounded-3xl border border-[#d9e4ff] bg-linear-to-b from-white to-[#edf2ff] p-4 shadow-[0_14px_32px_rgba(26,66,152,0.16)] sm:p-5 lg:col-span-3 lg:justify-self-end">
+      <article className="relative w-full overflow-hidden rounded-3xl border border-[#d9e4ff] bg-linear-to-b from-white to-[#edf2ff] p-4 shadow-[0_14px_32px_rgba(26,66,152,0.16)] sm:p-5 lg:col-span-3 2xl:col-span-3 lg:justify-self-end">
         <div className="pointer-events-none absolute -top-6 -right-8 size-24 rounded-full bg-[#dbe6ff]" />
         <div className="pointer-events-none absolute -bottom-8 -left-8 size-20 rounded-full bg-[#dbe6ff]" />
 

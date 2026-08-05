@@ -3,7 +3,7 @@ import { ChevronRight, PackageCheck, ShieldCheck, Truck } from "lucide-react";
 
 export function HomeHero() {
   return (
-    <main className="relative overflow-hidden px-4 lg:py-6 sm:px-8 lg:px-0">
+    <main className="relative overflow-hidden px-4 lg:pt-6 sm:px-8 lg:px-15">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(105,139,255,0.22),transparent_0%),radial-gradient(circle_at_88%_5%,rgba(120,164,255,0.22),transparent_0%)]" />
 
       <div className="pointer-events-none absolute top-6 right-6 hidden h-56 w-[44%] rounded-full bg-[radial-gradient(circle,rgba(96,133,245,0.28)_1.2px,transparent_1.3px)] bg-size-[8px_8px] opacity-55 lg:block" />
