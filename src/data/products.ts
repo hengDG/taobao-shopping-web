@@ -11,7 +11,7 @@ export const products: ProductCard[] = [
     imageUrl:
       "https://img.alicdn.com/bao/upload/O1CN01PctgYc1Ka21VZ0CBd_!!6000000001179-2-yinhe.png",
     productUrl: "https://item.taobao.com/item.htm?id=698218631635",
-    benefit: "百亿补贴",
+    benefit: "热卖",
   },
   {
     id: "574955915424",
@@ -22,7 +22,7 @@ export const products: ProductCard[] = [
     imageUrl:
       "https://img.alicdn.com/bao/upload/O1CN01Qr1asS1RNOJyr941B_!!6000000002099-2-yinhe.png",
     productUrl: "https://item.taobao.com/item.htm?id=574955915424",
-    benefit: "官方补贴",
+    benefit: "官方",
   },
   {
     id: "602415667860",
@@ -64,7 +64,7 @@ export const products: ProductCard[] = [
     imageUrl:
       "https://img.alicdn.com/bao/upload/O1CN01fPNgZy1Ejkj7Gy1D6_!!6000000000388-2-yinhe.png",
     productUrl: "https://item.taobao.com/item.htm?id=673649138436",
-    benefit: "官方补贴",
+    benefit: "官方",
   },
   {
     id: "654123038199",
@@ -85,7 +85,7 @@ export const products: ProductCard[] = [
     imageUrl:
       "https://img.alicdn.com/bao/upload/O1CN01vEYdQS1YEsGxtTf8F_!!6000000003028-2-yinhe.png",
     productUrl: "https://item.taobao.com/item.htm?id=571652558510",
-    benefit: "已补2元",
+    benefit: "已补",
   },
   {
     id: "573758252166",
@@ -96,7 +96,7 @@ export const products: ProductCard[] = [
     imageUrl:
       "https://img.alicdn.com/bao/upload/O1CN01zJXfoG1CkYGu1dhjd_!!6000000000119-0-yinhe.jpg",
     productUrl: "https://detail.tmall.com/item.htm?id=573758252166",
-    benefit: "官方立减15%",
+    benefit: "官",
   },
   {
     id: "682060732116",
@@ -107,7 +107,7 @@ export const products: ProductCard[] = [
     imageUrl:
       "https://img.alicdn.com/bao/upload/O1CN01C2mZdo24U31N04jPw_!!6000000007393-0-yinhe.jpg",
     productUrl: "https://detail.tmall.com/item.htm?id=682060732116",
-    benefit: "12期免息",
+    benefit: "热卖",
   },
   {
     id: "560885129778",
